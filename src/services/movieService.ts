@@ -3,7 +3,6 @@ import type { MoviesResponse } from "../types/movie";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
 
-// беремо токен саме з VITE_TMDB_TOKEN
 const TMDB_TOKEN = import.meta.env.VITE_TMDB_TOKEN as string;
 
 export interface FetchMoviesParams {
@@ -16,7 +15,6 @@ export const fetchMovies = async (
 ): Promise<MoviesResponse> => {
   const config: AxiosRequestConfig = {
     params: {
-      // можна додати будь-які дефолтні параметри TMDB
       include_adult: false,
       language: "en-US",
       ...params,

@@ -16,7 +16,6 @@ function App() {
   const [isError, setIsError] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const handleSearch = async (query: string) => {
-    // новий пошук → очищаємо попередні дані
     setMovies([]);
     setIsError(false);
     setSelectedMovie(null);
